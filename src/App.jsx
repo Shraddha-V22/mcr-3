@@ -9,16 +9,16 @@ function App() {
   } = useSnacks();
 
   return (
-    <section>
+    <section className="m-4 flex flex-col gap-4">
       <input
         type="text"
         placeholder="search with products or ingredrients..."
-        className="border border-black outline-none"
+        className="w-[400px] border border-black p-1 indent-2 outline-none placeholder:capitalize"
         onChange={(e) => dispatch({ type: "SEARCH", payload: e.target.value })}
       />
       <table className="table-auto">
         <thead className="">
-          <tr className="font-semibold">
+          <tr className="border border-black font-semibold">
             <TableHeaderCell title="Id" name="id" />
             <TableHeaderCell title="Product Name" name="product_name" />
             <TableHeaderCell title="Product Weight" name="product_weight" />
@@ -50,7 +50,7 @@ function TableHeaderCell({ title, name }) {
   };
 
   return (
-    <td className="relative">
+    <td className="relative border-x border-black p-1">
       <h1
         className="cursor-pointer"
         onClick={() => setShowSorts((prev) => !prev)}
@@ -58,36 +58,39 @@ function TableHeaderCell({ title, name }) {
         {title}
       </h1>
       {showSorts && (
-        <div className="absolute w-[60px] bg-white">
-          <div>
-            <label htmlFor="htl">asc</label>
+        <div className="absolute w-[80px] bg-white">
+          <div className="flex items-center gap-1 px-2">
             <input
               onChange={changeHandler}
               type="radio"
               name={name}
               id="htl"
               value="htl"
+              // className="hidden"
             />
+            <label htmlFor="htl">asc</label>
           </div>
-          <div>
-            <label htmlFor="lth">des</label>
+          <div className="flex items-center gap-1 px-2">
             <input
               onChange={changeHandler}
               type="radio"
               name={name}
               id="lth"
               value="lth"
+              // className="hidden"
             />
+            <label htmlFor="lth">des</label>
           </div>
-          <div>
-            <label htmlFor="reset">reset</label>
+          <div className="flex items-center gap-1 px-2">
             <input
               onChange={changeHandler}
               type="radio"
               name={name}
               id="reset"
               value="reset"
+              // className="hidden"
             />
+            <label htmlFor="reset">reset</label>
           </div>
         </div>
       )}
