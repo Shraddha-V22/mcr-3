@@ -22,7 +22,7 @@ function App() {
             <TableHeaderCell title="Id" name="id" />
             <TableHeaderCell title="Product Name" name="product_name" />
             <TableHeaderCell title="Product Weight" name="product_weight" />
-            <TableHeaderCell title="Price" name="price" />
+            <TableHeaderCell title="Price (INR)" name="price" />
             <TableHeaderCell title="Calories" name="calories" />
             <TableHeaderCell title="Ingredients" name="ingredients" />
           </tr>
